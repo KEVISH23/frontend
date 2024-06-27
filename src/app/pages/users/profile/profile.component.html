@@ -1,0 +1,95 @@
+<div class="container mt-5">
+  <div class="card p-4">
+    <h2 class="text-center mb-4">User Profile</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Full name</label>
+        <input
+          formControlName="fullName"
+          type="text"
+          class="form-control"
+          id="name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="email"
+          required
+        />
+      </div>
+      
+
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input
+              formControlName="gender"
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="male"
+              value="male"
+              required
+            />
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              formControlName="gender"
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+              required
+            />
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              formControlName="gender"
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="others"
+              value="others"
+              required
+            />
+            <label class="form-check-label" for="others">Others</label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="form-check">
+          <input
+            formControlName="update"
+            (change)="changeOptionForUpdate()"
+            class="form-check-input"
+            type="checkbox"
+            value="update"
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Want to update your details
+          </label>
+        </div>
+      </div>
+      <div class="d-flex gap-2">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!wantToUpdate || profileForm.invalid"
+        >
+          Update
+        </button>
+        <button type="button" class="btn btn-danger" (click)="deleteUser()">Delete</button>
+      </div>
+    </form>
+  </div>
+</div>

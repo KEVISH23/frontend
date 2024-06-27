@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row d-flex mainLayout">
+        <div class="col-2 sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="p-0 col-10 main-content">
+            <app-navbar [userName]="userName"></app-navbar>
+            <div class="ms-2">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+
+

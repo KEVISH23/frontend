@@ -1,0 +1,5 @@
+<div class="d-flex gap-2">
+    <button class="btn btn-info" (click)="onView()">View</button>
+    <button class="btn btn-primary" *ngIf="path || userRole==='Admin'" (click)="onEdit()">Edit</button>
+    <button class="btn btn-danger" *ngIf="path || userRole==='Admin'" (click)="onDelete()">Delete</button>
+</div>

@@ -1,0 +1,10 @@
+$sidebarBgColor:rgb(17, 78, 119);
+.mainLayout{
+    height: 100vh !important;
+    .sidebar{
+        background-color: $sidebarBgColor;
+        height: 100% !important;
+        color: #fff;
+    }
+}
+

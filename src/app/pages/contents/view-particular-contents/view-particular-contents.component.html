@@ -1,0 +1,15 @@
+<app-back-btn (onGoBack)="goBack()"></app-back-btn>
+<div class="container mt-4 d-flex justify-content-center align-items-center">
+  <div *ngIf="contentData" class="card" style="width: 25rem">
+    <img [src]="imageUrl" alt="..." />
+    <div class="card-body">
+      <h4 class="card-text">
+        Title:-{{contentData.title}}
+      </h4>
+      <p>{{contentData.description}}</p>
+    </div>
+  </div>
+  <div class="text-center" *ngIf="!contentData">
+    <h5>Loading....</h5>
+  </div>
+</div>

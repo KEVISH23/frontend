@@ -1,0 +1,9 @@
+.backLink{
+    color: blue;
+    cursor: pointer;
+    font-size: 20px;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}

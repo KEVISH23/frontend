@@ -1,0 +1,21 @@
+<app-back-btn (onGoBack)="goBack()"></app-back-btn>
+<div class="container mt-4 d-flex justify-content-center">
+  <div *ngIf="userDetails" class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ userDetails.fullName }}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Email : {{ userDetails.email }}</li>
+      <li class="list-group-item">Role : {{ userDetails.role }}</li>
+      <li class="list-group-item">Gender : {{ userDetails.gender }}</li>
+      <li class="list-group-item">Register At : {{ userDetails.createdAt }}</li>
+    </ul>
+  </div>
+  <div *ngIf="!userDetails" class="text-center">
+    <h5>Loading....</h5>
+  </div>
+
+</div>
+<div class="container-fluid mt-4">
+  <app-content-of-user *ngIf="userDetails" [userId]="id"></app-content-of-user>
+</div>
