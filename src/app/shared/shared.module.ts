@@ -5,7 +5,10 @@ import { ActionCellRenderingComponent } from './cell-renderer/action-cell-render
 import { AgGridAngular, AgGridModule } from 'ag-grid-angular';
 import { ContentRenderingComponent } from './cell-renderer/content-rendering/content-rendering.component';
 import { BackBtnComponent } from './back-btn/back-btn.component';
-
+import { DisplayCountComponent } from './display-count/display-count.component';
+import { RouterModule } from '@angular/router';
+import { GraphComponent } from './graph/graph.component';
+import { NgApexchartsModule } from "ng-apexcharts";
 
 
 @NgModule({
@@ -13,16 +16,22 @@ import { BackBtnComponent } from './back-btn/back-btn.component';
     DatatableComponent,
     ActionCellRenderingComponent,
     ContentRenderingComponent,
-    BackBtnComponent
+    BackBtnComponent,
+    DisplayCountComponent,
+    GraphComponent
   ],
   imports: [
     CommonModule,
     AgGridAngular,
-    AgGridModule
+    AgGridModule,
+    RouterModule,
+    NgApexchartsModule
   ],
   exports:[
     DatatableComponent,
-    BackBtnComponent
+    BackBtnComponent,
+    DisplayCountComponent,
+    GraphComponent
   ]
 })
 export class SharedModule { }

@@ -5,7 +5,8 @@ export interface IRESPONSE{
     status:boolean,
     user:any,
     data:any,
-    message:string
+    message:string,
+    counts:any
 }
 // export interface IRESPONSE{
 //     status:boolean,

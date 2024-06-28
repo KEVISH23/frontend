@@ -1,1 +1,48 @@
-<p>dashboard works!</p>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-3">
+      <app-display-count
+        title="Total Users"
+        [counts]="counts?.userCount"
+        navigationText="Go to Users"
+        navigaationUrl="/user/viewAllUser"
+      ></app-display-count>
+    </div>
+    <div class="col-3">
+      <app-display-count
+        title="Total Contents"
+        [counts]="counts?.contentCount"
+        navigationText="Go to Content"
+        navigaationUrl="/content/viewAllContent"
+      ></app-display-count>
+    </div>
+    <div class="col-3">
+      <app-display-count
+        title="Total Content Creators"
+        [counts]="counts?.contentCreatorCount"
+      ></app-display-count>
+    </div>
+    <div class="col-3">
+      <app-display-count
+        title="Total Admins"
+        [counts]="counts?.adminCount"
+        navigationText="Go to Users"
+        navigaationUrl="/user/viewAllUser"
+      ></app-display-count>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 d-flex justify-content-end">
+  <div class="col-4">
+    <select #yearFilter (change)="changeYear(yearFilter)" class="form-select" name="ok" id="ok">
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+    </select>
+  </div>
+</div>
+
+<app-graph></app-graph>
